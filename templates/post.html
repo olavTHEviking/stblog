@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block keywords %}{{post.keywords}}{% endblock %}
+
+{% block left_column %}
+{% endblock %}
+
+{% block center_column %}
+  <div class="post_title">
+	<a href="../posts/{{post.id}}.html">{{post.title}}</a>
+  </div><br />
+  <span class="post_created">{{ post.created }}</span><br />
+	<span class="post_created">Tags: <b>{% for tag in tags %}{{ tag.1 }} |{% endfor %}</b></span><br /><br />
+
+
+   {{ post.body }}
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+			url: "../calendar.inc.html",
+			context: document.body,
+			success: function(data, textStatus, jqXHR){
+				$("#left_column").html(data);
+			}
+		});
+		$.ajax({
+			url: "../tags.inc.html",
+			context: document.body,
+			success: function(data, textStatus, jqXHR){
+				$("#right_column").html(data);
+			}
+		});
+
+
+	});
+</script>
+{% endblock %}
+
+{% block right_column %}
+{% endblock %}

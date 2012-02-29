@@ -1,0 +1,11 @@
+<a href="/index.html"><h2>Главная</h2></a>
+<hr />
+
+
+<h2>Календарь</h2>
+{% for year in hrono %}
+<h3>{{ year }}</h3>
+   {% for month in hrono[year] %}
+   &nbsp;&nbsp;<a href="{% if not main_page %}../{% endif %}calendar/{{year}}-{{ month }}.html">{{ month  | month_name }}</a>
+   {% endfor %}
+{% endfor %}

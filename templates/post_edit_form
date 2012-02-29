@@ -1,0 +1,5 @@
+title: {{title}}
+keywords: {{keywords}}
+tags: {%for tag in tags%}{{tag.1}},{%endfor%}
+
+{{post_text}}

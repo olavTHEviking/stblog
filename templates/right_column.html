@@ -1,0 +1,6 @@
+<h2>Тэги </h2>
+<hr />
+
+{% for tag in tags %}
+<a href="{% if not main_page %}../{% endif %}tags/{{ tag.id }}.html">{{ tag.name }}</a>
+{% endfor %}

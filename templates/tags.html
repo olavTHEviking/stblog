@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block keywords %}{{ tag }}{% endblock %}
+
+{% block left_column %}
+{% include 'left_column.html' %}
+{% endblock %}
+
+{% block center_column %}
+<h3>Посты с тэгом: {{ tag.name }}</h3><br />
+<table width="" cellspacing="0" cellpadding="0" border="1">
+{% for post in posts %}
+<tr>
+  <td>{{ post.created }}</td>
+  <td><a href="../posts/{{ post.id }}.html">{{ post.title }}</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+
+{% block right_column %}
+{% include "right_column.html" %}
+{% endblock %}

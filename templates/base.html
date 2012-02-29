@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>{{ title }}</title>
+	<meta name="keywords" content="{% block keywords %}{%endblock%}" />
+    <meta name="description" content="" />
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<link rel="stylesheet" href="{% if not main_page %}../{% endif %}css/styles.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="{% if not main_page %}../{% endif %}js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+	<div class="container">
+	  <div class="header"><br />
+		<center><span style="font-size: 30px">Все говно, что есть в славном мире ИТ, в одном месте.</span></center><br /><br />
+		<center><span style="font-size: 20px">А еще здесь живет дух web 1.0.</span></center>
+	  </div>
+	  <div id="left_column">
+		{% block left_column %}{% endblock %}
+	  </div>
+	  <div id="center_column">
+		{% block center_column %}{% endblock %}
+	  </div>
+	  <div id="right_column">
+		{% block right_column %}{% endblock %}
+	  </div>
+	</div>
+  </body>
+</html>
